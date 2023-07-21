@@ -31,10 +31,10 @@ export default function HomePage() {
             Selecione o filme
 
             <ListContainer>
-               {movies.map(movie => 
-                <MovieContainer key={movie.id} data-test="movie">
-                    <img src={movie.posterURL} alt={movie.title}/>         
-                </MovieContainer>
+                {movies.map(movie =>
+                    <MovieContainer key={movie.id} data-test="movie">
+                        <img src={movie.posterURL} alt={movie.title} />
+                    </MovieContainer>
                 )}
             </ListContainer>
 
