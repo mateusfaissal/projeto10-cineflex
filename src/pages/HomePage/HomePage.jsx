@@ -14,7 +14,6 @@ export default function HomePage() {
 
         promise.catch(error => alert(error.message));
 
-        console.log(movies);
     }, [])
 
     if (movies === null) {
@@ -32,9 +31,11 @@ export default function HomePage() {
 
             <ListContainer>
                 {movies.map(movie =>
-                    <MovieContainer key={movie.id} data-test="movie">
-                        <img src={movie.posterURL} alt={movie.title} />
-                    </MovieContainer>
+                    <Link to={`/sessoes/${movie.id}`} key={movie.id}>
+                        <MovieContainer key={movie.id} data-test="movie">
+                            <img src={movie.posterURL} alt={movie.title} />
+                        </MovieContainer>
+                    </Link>
                 )}
             </ListContainer>
 
@@ -69,6 +70,9 @@ const MovieContainer = styled.div`
     align-items: center;
     justify-content: center;
     margin: 10px;
+    &:hover {
+        cursor: pointer;
+    }
     img {
         width: 130px;
         height: 190px;
