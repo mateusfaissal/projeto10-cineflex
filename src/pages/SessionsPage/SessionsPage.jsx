@@ -10,7 +10,7 @@ export default function SessionsPage() {
     const [sessions, setSessions] = useState(null);
 
     useEffect(() => {
-        const promise = axios.get(`https://mock-api.driven.com.br/api/v8/cineflex/movies/${idFilme}/showtimes1`);
+        const promise = axios.get(`https://mock-api.driven.com.br/api/v8/cineflex/movies/${idFilme}/showtimes`);
 
         promise.then(res => setSessions(res.data));
 
