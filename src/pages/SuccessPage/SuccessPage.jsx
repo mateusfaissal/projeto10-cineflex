@@ -46,6 +46,9 @@ const PageContainer = styled.div`
         text-decoration: none;
     }
     button {
+        &:hover {
+        cursor: pointer;
+    }
         margin-top: 50px;
     }
     h1 {

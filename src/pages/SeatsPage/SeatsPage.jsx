@@ -166,6 +166,9 @@ const SeatsContainer = styled.div`
     align-items: center;
     justify-content: center;
     margin-top: 20px;
+    &:hover {
+        cursor: pointer;
+    }
 `
 const FormContainer = styled.div`
     width: calc(100vw - 40px); 
@@ -175,6 +178,17 @@ const FormContainer = styled.div`
     margin: 20px 0;
     font-size: 18px;
     button {
+        &:hover {
+        cursor: ${props => {
+        if(props.selected){
+            return "pointer";
+        }if(props.indisponivel){
+            return "disabled"
+        }else{     
+        return "pointer"
+        }
+        }};
+    }
         align-self: center;
     }
     input {
