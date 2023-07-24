@@ -15,7 +15,7 @@ export default function SessionsPage() {
         promise.then(res => setSessions(res.data));
 
         promise.catch(error => alert(error.message));
-        console.log(sessions);
+        
     }, []);
 
     if (sessions === null) {
@@ -83,6 +83,9 @@ const ButtonsContainer = styled.div`
     flex-direction: row;
     margin: 20px 0;
     button {
+        &:hover {
+        cursor: pointer;
+    }
         margin-right: 20px;
     }
     a {
