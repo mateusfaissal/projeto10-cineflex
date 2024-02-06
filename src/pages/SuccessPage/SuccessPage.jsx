@@ -1,28 +1,24 @@
 import { Link } from "react-router-dom"
 import styled from "styled-components"
 
-export default function SuccessPage({ buyerInfo, setBuyerInfo }) {
-
+export default function SuccessPage({ buyerInfo }) {
     return (
         <PageContainer>
             <h1>Pedido feito <br /> com sucesso!</h1>
-
             <TextContainer data-test="movie-info">
                 <strong><p>Filme e sessão</p></strong>
-                <p>{buyerInfo.nomeFilme}</p>
-                <p>{buyerInfo.data} - {buyerInfo.horario}</p>
+                <p>{buyerInfo.movieName}</p>
+                <p>{buyerInfo.date} - {buyerInfo.time}</p>
             </TextContainer>
-
             <TextContainer data-test="seats-info">
                 <strong><p>Ingressos</p></strong>
-                {buyerInfo.assentos.map(seat =>
+                {buyerInfo.seats.map(seat =>
                     <p>Assento {seat}</p>
                 )}
             </TextContainer>
-
             <TextContainer data-test="client-info">
                 <strong><p>Comprador</p></strong>
-                <p>Nome: {buyerInfo.nome} </p>
+                <p>Nome: {buyerInfo.name} </p>
                 <p>CPF: {buyerInfo.cpf} </p>
             </TextContainer>
             <Link to={'/'} data-test="go-home-btn">

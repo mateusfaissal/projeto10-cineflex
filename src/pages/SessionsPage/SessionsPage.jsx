@@ -3,19 +3,14 @@ import axios from "axios"
 import { useEffect, useState } from "react"
 import { Link, useParams } from "react-router-dom"
 
-
 export default function SessionsPage() {
-
-    const { idFilme } = useParams();
+    const { movieId } = useParams();
     const [sessions, setSessions] = useState(null);
 
     useEffect(() => {
-        const promise = axios.get(`https://mock-api.driven.com.br/api/v8/cineflex/movies/${idFilme}/showtimes`);
-
+        const promise = axios.get(`${import.meta.env.VITE_API_URL}/movies/${movieId}/showtimes`);
         promise.then(res => setSessions(res.data));
-
         promise.catch(error => alert(error.message));
-        
     }, []);
 
     if (sessions === null) {
@@ -30,7 +25,6 @@ export default function SessionsPage() {
             <div>
                 {sessions.days.map(session =>
                     <SessionContainer key={session.id} data-test="movie-day">
-
                         {session.weekday} - {session.date}
                         <ButtonsContainer>
                             {session.showtimes.map(time =>
@@ -50,7 +44,6 @@ export default function SessionsPage() {
                     <p>{sessions.title}</p>
                 </div>
             </FooterContainer>
-
         </PageContainer>
     )
 }

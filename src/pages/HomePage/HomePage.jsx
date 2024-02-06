@@ -4,11 +4,10 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 export default function HomePage() {
-
     const [movies, setMovies] = useState(null);
 
     useEffect(() => {
-        const promise = axios.get('https://mock-api.driven.com.br/api/v8/cineflex/movies');
+        const promise = axios.get(`${import.meta.env.VITE_API_URL}/movies`);
 
         promise.then(res => setMovies(res.data));
 
@@ -21,14 +20,9 @@ export default function HomePage() {
             <p> Loading ... </p>
         )
     }
-
-
-
-
     return (
         <PageContainer>
             Selecione o filme
-
             <ListContainer>
                 {movies.map(movie =>
                     <Link to={`/sessoes/${movie.id}`} key={movie.id}>
@@ -38,7 +32,6 @@ export default function HomePage() {
                     </Link>
                 )}
             </ListContainer>
-
         </PageContainer>
     )
 }
