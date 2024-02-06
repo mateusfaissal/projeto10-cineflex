@@ -20,38 +20,7 @@ Cineflex é uma aplicação React desenvolvida para facilitar a reserva de assen
 
 ## API
 
-A aplicação consome dados de uma API para listar filmes, sessões e assentos disponíveis, além de permitir a reserva de assentos. As requisições para a API são as seguintes:
-
-### Obter lista de filmes
-
-```http
-GET https://mock-api.driven.com.br/api/v8/cineflex/movies
-```
-
-### Obter lista de sessões de um filme
-#### Substitua ID_DO_FILME pelo id do filme desejado
-```http
-GET https://mock-api.driven.com.br/api/v8/cineflex/movies/ID_DO_FILME/showtimes
-```
-
-### Obter lista de assentos de uma sessão
-#### Substitua ID_DA_SESSAO pelo id da sessão desejada
-```http
-GET https://mock-api.driven.com.br/api/v8/cineflex/showtimes/ID_DA_SESSAO/seats
-
-```
-
-### Obter lista de filmes
-
-```http
-GET https://mock-api.driven.com.br/api/v8/cineflex/movies
-```
-
-### Reservar assentos
-
-```http
-POST https://mock-api.driven.com.br/api/v8/cineflex/seats/book-many
-```
+A aplicação consome dados de uma API para listar filmes, sessões e assentos disponíveis, além de permitir a reserva de assentos. 
 
 ## Como rodar o projeto
 
